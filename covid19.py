@@ -222,11 +222,11 @@ if case_type == 'Confirmed':
     st.plotly_chart(figc)    
 elif case_type == 'Deaths':      
     figd = go.Figure(case_d)  
-    figc.update_layout(title = "Deaths Cases in {}".format(city))
+    figd.update_layout(title = "Deaths Cases in {}".format(city))
     st.plotly_chart(figd)     
 elif case_type == 'Recovered':        
     figr = go.Figure(case_r) 
-    figc.update_layout(title = "Recovered Cases in {}".format(city))
+    figr.update_layout(title = "Recovered Cases in {}".format(city))
     st.plotly_chart(figr)
 elif case_type == 'Confirmed, Deaths and Recovered':        
     fign = go.Figure([case_c, case_d, case_r])
