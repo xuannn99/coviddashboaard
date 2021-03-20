@@ -552,43 +552,7 @@ model_predictions.head()
 st.dataframe(model_predictions)
 
 
-st.markdown("<h2 style='text-align: center; color: black; background-color:Beige'>View Cases on Map</h2>",
-            unsafe_allow_html=True)
-fig_con = px.choropleth(covid, locations="Country", 
-	                        locationmode='country names', color="Confirmed", 
-	                        animation_frame = 'Date', 
-                            color_continuous_scale="agsunset",
-	                        title='Countries with Confirmed Cases')
 
-fig_d = px.choropleth(covid, locations="Country", 
-	                        locationmode='country names', color="Deaths", 
-	                        animation_frame = 'Date', 
-                            color_continuous_scale="reds",
-	                        title='Countries with Death Cases')
-	                       
-fig_r = px.choropleth(covid, locations="Country", 
-	                        locationmode='country names', color="Recovered", 
-	                        animation_frame = 'Date', 
-                            color_continuous_scale="emrld",
-	                        title='Countries with Recovered Cases')
-
-fig_a = px.choropleth(covid, locations="Country", 
-	                        locationmode='country names', color="Active", 
-	                        animation_frame = 'Date', 
-                            color_continuous_scale="oranges",
-	                        title='Countries with Active Cases')
-opt = st.radio(
-     "Select option",
-     ('Confirmed Cases', 'Recovered Cases','Deaths Cases', 'Active Cases'))
-
-if opt == 'Confirmed Cases':
-     st.plotly_chart(fig_con)
-elif opt == 'Recovered Cases':
-    st.plotly_chart(fig_r)
-elif opt == 'Deaths Cases':
-    st.plotly_chart(fig_d)
-else:
-     st.plotly_chart(fig_a)
 
 
 
