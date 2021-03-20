@@ -405,7 +405,7 @@ st.header("View the Dataset by Month")
 if st.checkbox("Click to View the Dataset",False):
     "Select the Month from Slider"
     nc = st.slider("Month",2,11,2,1)
-    covid2 = covid1[covid1["Date"].dt.month ==nc]
+    covid2 = covid1[covid1["Date"].dt.month ==nc].reset_index(drop=True)
     "data", covid2
 
 st.markdown("<h2 style='text-align: center; color: black; background-color:lightgreen'>Countries with zero cases</h2>",
