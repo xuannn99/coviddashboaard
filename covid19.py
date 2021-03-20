@@ -305,8 +305,8 @@ elif op == 'Date and Month':
         st.altair_chart(cn+dn)
 
 
-st.header("View Top 5 Countries : ")
-opt_selected = st.selectbox("", options=['Top Confirmed Cases', 'Top Death Cases', 'Top Recovered Cases', 'Death Percentage', 'Confirmed Percentage', 'Recovered Percentage'])
+st.header("View Top Countries with most cases: ")
+opt_selected = st.selectbox("", options=['Top Confirmed Cases', 'Top Death Cases', 'Top Recovered Cases', 'Highest Death Percentage', 'Highest Confirmed Percentage', 'Highest Recovered Percentage'])
 country_count = st.slider('No. of countries :', 
                           min_value=2, max_value=10, 
                           value=5, key='incident_count')
