@@ -388,7 +388,21 @@ else:
     st.plotly_chart(fig2_rp)
     st.plotly_chart(fig1_rp)
     
-
+    
+st.markdown("<h2 style='text-align: center; color: black; background-color:lightgreen'>Countries with zero cases</h2>",
+            unsafe_allow_html=True)
+case_type = st.selectbox("Select case type : ", 
+                         ['Confirmed', 'Active', 'Deaths'], 1,
+                         key= 'zero_cases')
+temp_df = latest[latest[case_type] == 0]
+st.write(' Countries with zero ' + case_type.lower() + ' cases :')
+if len(temp_df) == 0:
+    st.error('There are no records present where ' + case_type.lower() + ' cases are zero!')
+else:
+    temp_df = temp_df[['Country', 'Confirmed', 'Deaths', 'Recovered', 'Active']].reset_index(drop=True)
+    st.write(temp_df)
+    
+    
 st.header("View Covid-19 details by Date")
 cty = st.selectbox(" Select Country",covid1["Country"][:191], key="cities")
 ddd = st.date_input(
