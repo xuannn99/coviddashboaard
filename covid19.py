@@ -574,7 +574,7 @@ fig_r = px.choropleth(covid, locations="Country",
 
 fig_a = px.choropleth(covid, locations="Country", 
 	                        locationmode='country names', color="Active", 
-	                        , 
+	                        
                             color_continuous_scale="oranges",
 	                        title='Countries with Active Cases')
 opt = st.radio(
