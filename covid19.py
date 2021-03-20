@@ -305,7 +305,7 @@ elif op == 'Date and Month':
         st.altair_chart(cn+dn)
 
 
-st.header("View Top Countries with most cases: ")
+st.header("View Top Most Cases Countries: ")
 opt_selected = st.selectbox("", options=['Top Confirmed Cases', 'Top Death Cases', 'Top Recovered Cases', 'Highest Death Percentage', 'Highest Confirmed Percentage', 'Highest Recovered Percentage'])
 country_count = st.slider('No. of countries :', 
                           min_value=2, max_value=10, 
@@ -389,7 +389,7 @@ else:
     st.plotly_chart(fig1_rp)
       
 breakline()
-st.header("View Top 5 least Countries : ")
+st.header("View Top Least Cases Countries : ")
 type_of_case = st.selectbox('Select type of case : ', 
                             ['Confirmed', 'Active', 'Deaths', 'Recovered'],
                             key = 'least_cases')
