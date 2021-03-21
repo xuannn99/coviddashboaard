@@ -119,7 +119,7 @@ st.plotly_chart(fig_world);
      
      
 st.header("Select Country to visualize")
-city = st.selectbox("Country",covid["Country"][:191])
+city = st.selectbox("Country",covid["Country"][:190])
 
 st.markdown("Info: ")
 filtered_dict = covid[covid['Country']== city].to_dict('records')[0]
