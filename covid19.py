@@ -234,7 +234,7 @@ elif case_type == 'Confirmed, Deaths and Recovered':
     st.plotly_chart(fign) 
     
 
-st.header(f"View deaths for {city} by Month/Day/Date")    
+st.header(f"View Cases for {city} by Month/Day/Date")    
     
 a= alt.Chart(covid1[covid1["Country"]==city],width=500,height=400).mark_bar().encode(
     x="day(Date):O",
