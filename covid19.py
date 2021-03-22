@@ -421,14 +421,6 @@ city_v = covid1[(covid1['Date'] == pd.Timestamp(ddd)) & (covid1['Country'] == ct
 st.dataframe(city_v)
 
 
-st.header("View the Dataset by Month")
-
-if st.checkbox("Click to View the Dataset",False):
-    "Select the Month from Slider"
-    nc = st.slider("Month",2,11,2,1)
-    covid2 = covid1[covid1["Date"].dt.month ==nc].reset_index(drop=True)
-    "data", covid2
-
 st.markdown("<h2 style='text-align: center; color: black; background-color:lightgreen'>Countries with zero cases</h2>",
             unsafe_allow_html=True)
 case_type = st.selectbox("Select case type : ", 
