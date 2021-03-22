@@ -534,8 +534,15 @@ st.write(f'Accuracy: {round(accuracy_poly*100,3)} %')
 
 
 st.header('SVM Model')
+c_num = st.slider('Penalty Parameter, C :', 
+                          min_value=1, max_value=10, 
+                          value=3, key='C')
+
+degrees_num = st.slider('No. of degree :', 
+                          min_value=1, max_value=10, 
+                          value=5, key='degreesvm')
 #Intializing SVR Model
-svm=SVR(C=3,degree=5,kernel='poly',epsilon=0.01)
+svm=SVR(C=c_num,degree=degrees_num,kernel='poly',epsilon=0.01)
 
 #Fitting model on the training data
 svm.fit(np.array(train_ml["Days Since"]).reshape(-1,1),np.array(train_ml["Confirmed"]).reshape(-1,1))
