@@ -378,10 +378,10 @@ elif  opt_selected == 'Top Death Cases':
 elif  opt_selected == 'Top Recovered Cases':
     st.plotly_chart(fig2_r)
     st.plotly_chart(fig1_r)
-elif  opt_selected == 'Confirmed Percentage':
+elif  opt_selected == 'Highest Confirmed Percentage':
     st.plotly_chart(fig2_cp)
     st.plotly_chart(fig1_cp)
-elif  opt_selected == 'Death Percentage':
+elif  opt_selected == 'Highest Death Percentage':
     st.plotly_chart(fig2_dp)
     st.plotly_chart(fig1_dp)
 else:
