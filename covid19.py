@@ -114,9 +114,7 @@ for i, df in enumerate(df_list):
 fig_world.update_yaxes(type="linear")
 st.plotly_chart(fig_world);
 
-
-
-     
+ 
      
 st.header("Select Country to visualize")
 city = st.selectbox("Country",covid["Country"][:190])
@@ -161,6 +159,8 @@ fig_dc.update_layout(
         )
 st.plotly_chart(fig_dc)
 
+st.header("Select Country to visualize")
+city = st.selectbox("Country",covid["Country"][:190])
 
 def dataf(latest):
     total_d = pd.DataFrame({
