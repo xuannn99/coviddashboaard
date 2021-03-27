@@ -159,8 +159,6 @@ fig_dc.update_layout(
         )
 st.plotly_chart(fig_dc)
 
-st.header("Select Country to visualize")
-city = st.selectbox("Country",covid["Country"][:190])
 
 def dataf(latest):
     total_d = pd.DataFrame({
