@@ -171,8 +171,6 @@ def dataf(latest):
                  latest['Active'].iloc[0])})
     return total_d
 
-st.header("Select Country to visualize")
-city = st.selectbox("Country",covid["Country"][:190])
 
 tt = dataf(latest[latest["Country"]== city])
 if st.checkbox("View Bar chart",False):
