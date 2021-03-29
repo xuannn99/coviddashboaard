@@ -395,9 +395,9 @@ selected_count = st.slider('No. of countries :',
                            min_value=1, max_value=10, 
                            value=5, key = 'least_cases')
 sorted_country_df = latest[latest[type_of_case] > 0].sort_values(type_of_case, ascending= True)
-def bubble_chart(selected_count):
-    fig = px.scatter(sorted_country_df.head(selected_count), x="Country", y=type_of_case, size=type_of_case, color="Country",
-               hover_name="Country", size_max=60)
+def bubble_chart(n):
+    fig = px.scatter(sorted_country_df.head(n), x="Country", y=type_of_case, size=type_of_case, color="Country",
+               hover_name="Country", size_max=10)
     fig.update_layout(
     title=str(n) +" Countries with least " + type_of_case.lower() + " cases",
     xaxis_title="Countries",
