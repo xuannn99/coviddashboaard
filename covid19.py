@@ -444,8 +444,8 @@ covid3["Days Since"]=covid3["Days Since"].dt.days
 
 st.header('Linear Regression')
 
-train_ml=covid3.iloc[:int(covid3.shape[0]*0.80)]
-valid_ml=covid3.iloc[int(covid3.shape[0]*0.80):]
+train_ml=covid3.iloc[:int(covid3.shape[0]*0.95)]
+valid_ml=covid3.iloc[int(covid3.shape[0]*0.95):]
 model_scores=[]
 
 lin_reg=LinearRegression(normalize=True)
@@ -478,8 +478,8 @@ st.write(f'Accuracy: {round(accuracy*100,3)} %')
 
 
 st.header('Polynomial Regression')
-train_ml=covid3.iloc[:int(covid3.shape[0]*0.80)]
-valid_ml=covid3.iloc[int(covid3.shape[0]*0.80):]
+train_ml=covid3.iloc[:int(covid3.shape[0]*0.95)]
+valid_ml=covid3.iloc[int(covid3.shape[0]*0.95):]
 
 
 
