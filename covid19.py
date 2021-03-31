@@ -476,7 +476,7 @@ st.plotly_chart(figp)
 
 st.write("Root Mean Square Error for Linear Regression: ",np.sqrt(mean_squared_error(valid_ml["Confirmed"],prediction_valid_linreg)))
 st.write(f'Training Accuracy: {round(accuracy*100,3)} %')
-st.write("R2 Score: ",np.sqrt(r2_score(valid_ml["Confirmed"],prediction_valid_linreg)))
+st.write("R2 Score: ",r2_score(valid_ml["Confirmed"],prediction_valid_linreg))
 
 
 st.header('Polynomial Regression')
