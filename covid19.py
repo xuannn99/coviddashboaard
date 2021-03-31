@@ -14,7 +14,7 @@ import altair as alt
 import plotly.graph_objects as go
 import datetime
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.svm import SVR
 from sklearn.preprocessing import PolynomialFeatures
 from datetime import timedelta
@@ -447,15 +447,16 @@ st.header('Linear Regression')
 train_ml=covid3.iloc[:int(covid3.shape[0]*0.80)]
 valid_ml=covid3.iloc[int(covid3.shape[0]*0.80):]
 model_scores=[]
+r2_scores=[]
 
 lin_reg=LinearRegression(normalize=True)
 lin_reg.fit(np.array(train_ml["Days Since"]).reshape(-1,1),np.array(train_ml["Confirmed"]).reshape(-1,1))
 accuracy = lin_reg.score(np.array(train_ml["Days Since"]).reshape(-1,1),np.array(train_ml["Confirmed"]).reshape(-1,1))
 
 prediction_valid_linreg=lin_reg.predict(np.array(valid_ml["Days Since"]).reshape(-1,1))
-accuracy_v = lin_reg.score(np.array(valid_ml["Days Since"]).reshape(-1,1),np.array(valid_ml["Confirmed"]).reshape(-1,1))
 
 
+r2_scores.append(np.sqrt(r2_score(valid_ml["Confirmed"],prediction_valid_linreg)))
 model_scores.append(np.sqrt(mean_squared_error(valid_ml["Confirmed"],prediction_valid_linreg)))
 
 prediction_linreg=lin_reg.predict(np.array(covid3["Days Since"]).reshape(-1,1))
@@ -475,7 +476,7 @@ st.plotly_chart(figp)
 
 st.write("Root Mean Square Error for Linear Regression: ",np.sqrt(mean_squared_error(valid_ml["Confirmed"],prediction_valid_linreg)))
 st.write(f'Training Accuracy: {round(accuracy*100,3)} %')
-st.write(f'Training Accuracy: {round(accuracy_v*100,3)} %')
+st.write("R2 Score: ",np.sqrt(r2_score(valid_ml["Confirmed"],prediction_valid_linreg)))
 
 
 st.header('Polynomial Regression')
