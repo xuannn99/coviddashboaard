@@ -480,8 +480,8 @@ st.write(f'Training Accuracy: {round(accuracy*100,3)} %')
 
 
 st.header('Polynomial Regression')
-train_ml=covid3.iloc[:int(covid3.shape[0]*0.80)]
-valid_ml=covid3.iloc[int(covid3.shape[0]*0.80):]
+train_ml=covid3.iloc[:int(covid3.shape[0]*0.90)]
+valid_ml=covid3.iloc[int(covid3.shape[0]*0.90):]
 
 
 
@@ -522,7 +522,7 @@ figpp.update_layout(title="Confirmed Cases Polynomial Regression Prediction",
 
 st.plotly_chart(figpp)
 st.write("Root Mean Squared Error for Polynomial Regression: ",rmse_poly)
-st.write("R2 score: ",r2_score(valid_ml["Confirmed"],prediction_poly))
+st.write("R2 score: ",r2_score(train_poly,y)
 st.write(f' Training Accuracy: {round(accuracy_poly*100,3)} %')
 
 
