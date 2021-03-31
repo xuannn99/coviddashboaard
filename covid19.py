@@ -474,7 +474,7 @@ figp.update_layout(title="Confirmed Cases Linear Regression Prediction",
 st.plotly_chart(figp)
 
 st.write("Root Mean Square Error for Linear Regression: ",np.sqrt(mean_squared_error(valid_ml["Confirmed"],prediction_valid_linreg)))
-st.write(f'Accuracy: {round(accuracy*100,3)} %')
+st.write(f'Training Accuracy: {round(accuracy*100,3)} %')
 
 
 st.header('Polynomial Regression')
@@ -520,7 +520,7 @@ figpp.update_layout(title="Confirmed Cases Polynomial Regression Prediction",
 
 st.plotly_chart(figpp)
 st.write("Root Mean Squared Error for Polynomial Regression: ",rmse_poly)
-st.write(f'Accuracy: {round(accuracy_poly*100,3)} %')
+st.write(f' Training Accuracy: {round(accuracy_poly*100,3)} %')
 
 
 st.header('SVM Model')
@@ -556,7 +556,7 @@ figs.update_layout(title="Confirmed Cases Support Vectore Machine Regressor Pred
 
 st.plotly_chart(figs)
 st.write("Root Mean Square Error for Support Vectore Machine: ",np.sqrt(mean_squared_error(valid_ml["Confirmed"],prediction_valid_svm)))
-st.write(f'Accuracy: {round(accuracy_svm*100,3)} %')
+st.write(f'Training Accuracy: {round(accuracy_svm*100,3)} %')
 
 breakline()
 
