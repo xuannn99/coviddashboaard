@@ -14,7 +14,7 @@ import altair as alt
 import plotly.graph_objects as go
 import datetime
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.svm import SVR
 from sklearn.preprocessing import PolynomialFeatures
 from datetime import timedelta
@@ -522,6 +522,7 @@ figpp.update_layout(title="Confirmed Cases Polynomial Regression Prediction",
 
 st.plotly_chart(figpp)
 st.write("Root Mean Squared Error for Polynomial Regression: ",rmse_poly)
+st.write("R2 score: ",r2_score(valid_ml["Confirmed"],prediction_poly))
 st.write(f' Training Accuracy: {round(accuracy_poly*100,3)} %')
 
 
