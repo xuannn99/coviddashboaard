@@ -453,7 +453,7 @@ lin_reg.fit(np.array(train_ml["Days Since"]).reshape(-1,1),np.array(train_ml["Co
 accuracy = lin_reg.score(np.array(train_ml["Days Since"]).reshape(-1,1),np.array(train_ml["Confirmed"]).reshape(-1,1))
 
 prediction_valid_linreg=lin_reg.predict(np.array(valid_ml["Days Since"]).reshape(-1,1))
-
+accuracy_v = lin_reg.score(np.array(valid_ml["Days Since"]).reshape(-1,1),np.array(valid_ml["Confirmed"]).reshape(-1,1))
 
 
 model_scores.append(np.sqrt(mean_squared_error(valid_ml["Confirmed"],prediction_valid_linreg)))
@@ -475,6 +475,7 @@ st.plotly_chart(figp)
 
 st.write("Root Mean Square Error for Linear Regression: ",np.sqrt(mean_squared_error(valid_ml["Confirmed"],prediction_valid_linreg)))
 st.write(f'Training Accuracy: {round(accuracy*100,3)} %')
+st.write(f'Training Accuracy: {round(accuracy_v*100,3)} %')
 
 
 st.header('Polynomial Regression')
