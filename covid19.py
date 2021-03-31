@@ -22,11 +22,11 @@ from datetime import timedelta
 
 st.cache(persist=True)
 def load_data():
-    covid=pd.read_csv("COVIDdata.csv")
-    latest=covid[covid["Date"] == "2021-03-13"][["Country","Population","Confirmed","Deaths","Recovered","Active"]]
-    confirmed_df = pd.read_csv("Confirmed_data.csv")
-    death_df = pd.read_csv("Deaths_data.csv")
-    recovered_df = pd.read_csv("Recovered_data.csv")
+    covid=pd.read_csv("coviddata0330.csv")
+    latest=covid[covid["Date"] == "2021-03-30"][["Country","Population","Confirmed","Deaths","Recovered","Active"]]
+    confirmed_df = pd.read_csv("confirmed_0330.csv")
+    death_df = pd.read_csv("deaths_0330.csv")
+    recovered_df = pd.read_csv("recovered_0330.csv")
     return covid, latest, confirmed_df, death_df, recovered_df
 covid, latest, confirmed_df, death_df, recovered_df= load_data()
 
