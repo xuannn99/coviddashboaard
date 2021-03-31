@@ -456,8 +456,8 @@ accuracy = lin_reg.score(np.array(train_ml["Days Since"]).reshape(-1,1),np.array
 prediction_valid_linreg=lin_reg.predict(np.array(valid_ml["Days Since"]).reshape(-1,1))
 
 
-r2_scores.append(np.sqrt(r2_score(valid_ml["Confirmed"],prediction_valid_linreg)))
 model_scores.append(np.sqrt(mean_squared_error(valid_ml["Confirmed"],prediction_valid_linreg)))
+r2_scores.append(np.sqrt(r2_score(valid_ml["Confirmed"],prediction_valid_linreg)))
 
 prediction_linreg=lin_reg.predict(np.array(covid3["Days Since"]).reshape(-1,1))
 linreg_output=[]
