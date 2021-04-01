@@ -486,8 +486,8 @@ valid_ml=covid3.iloc[int(covid3.shape[0]*0.90):]
 
 
 degree_num = st.slider('No. of Degree :', 
-                          min_value=1, max_value=10, 
-                          value=6, key='degree')
+                          min_value=1, max_value=6, 
+                          value=5, key='degree')
 
 
 poly = PolynomialFeatures(degree = degree_num)
