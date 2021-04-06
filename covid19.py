@@ -480,8 +480,8 @@ st.write(f'Training Accuracy: {round(accuracy*100,3)} %')
 
 
 st.header('Polynomial Regression')
-train_ml=covid3.iloc[:int(covid3.shape[0]*0.60)]
-valid_ml=covid3.iloc[int(covid3.shape[0]*0.60):]
+train_ml=covid3.iloc[:int(covid3.shape[0]*0.80)]
+valid_ml=covid3.iloc[int(covid3.shape[0]*0.80):]
 
 
 
