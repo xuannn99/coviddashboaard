@@ -523,6 +523,7 @@ figpp.update_layout(title="Confirmed Cases Polynomial Regression Prediction",
 st.plotly_chart(figpp)
 st.write("Root Mean Squared Error for Polynomial Regression: ",rmse_poly)
 st.write(f' Training Accuracy: {round(accuracy_poly*100,3)} %')
+st.write("Root Mean Squared Error for Polynomial Regressionn: ",r2_score(valid_ml["Confirmed"],prediction_poly))
 
 
 st.header('SVM Model')
