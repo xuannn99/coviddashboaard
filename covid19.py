@@ -523,13 +523,13 @@ figpp.update_layout(title="Confirmed Cases Polynomial Regression Prediction",
 st.plotly_chart(figpp)
 st.write("Root Mean Squared Error for Polynomial Regression: ",rmse_poly)
 st.write(f' Training Accuracy: {round(accuracy_poly*100,3)} %')
-st.write("Root Mean Squared Error for Polynomial Regressionn: ",r2_score(valid_poly["Confirmed"],prediction_poly))
+st.write("Root Mean Squared Error for Polynomial Regressionn: ",r2_score(train_ml["Confirmed"],predictions_poly))
 
 
 st.header('SVM Model')
 c_num = st.slider('Penalty Parameter, C :', 
                           min_value=1, max_value=10, 
-                          value=3, key='C')
+                          value=5, key='C')
 
 degrees_num = st.slider('No. of degree :', 
                           min_value=1, max_value=10, 
