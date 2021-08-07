@@ -1,3 +1,0 @@
-# coviddashboaard
-
-Hi
